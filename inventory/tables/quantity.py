@@ -7,7 +7,7 @@ from inventory.models.quantity import Quantity
 class QuantityTable(tables.Table):
 
 	buttons = {
-		'add':'InventoryQuantityAdd',
+		'add':'QuantityFormView',
 	}
 
 	class Meta:

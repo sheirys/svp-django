@@ -12,6 +12,7 @@ class Product(models.Model):
 	total_quantity = models.IntegerField()
 	accounting = models.IntegerField(choices=ACCOUNTING_CHOICES, default=1)
 	enabled = models.BooleanField(default=True)
+	date_added = models.DateTimeField(auto_now=True)
 
 	def __str__(self):
 		return self.model

@@ -6,4 +6,3 @@ class ProductForm(ModelForm):
 	class Meta:
 		model = Product
 
-

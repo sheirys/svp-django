@@ -17,7 +17,14 @@ class ProductListView(SingleTableView, ListView):
 
 class ProductDetailView(DetailView):
 	model = Product
+	template_name = 'inventory/detail.html'
 
 class ProductFormView(FormView):
 	template_name = 'inventory/form.html'
 	form_class = ProductForm
+	success_url = '#'
+
+	def form_valid(self, form):
+		form.save()
+		return super(ProductFormView, self).form_valid(form)
+
