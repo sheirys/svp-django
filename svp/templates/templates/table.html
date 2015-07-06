@@ -2,10 +2,12 @@
 {% load trans blocktrans from i18n %}
 {% load bootstrap3 %}
 
-{% if table.filters %}
-	{% for filter in table.filters %}
-		{{ filter }}
+{% if table.buttons %}
+<div class="nav-sub">
+	{% for button_name, button_link in table.buttons.items %}
+		<a href="{% url button_link %}" class="btn btn-md btn-default">{{ button_name|title }}</a>
 	{% endfor %}
+</div>
 {% endif %}
 
 {% if table.page %}

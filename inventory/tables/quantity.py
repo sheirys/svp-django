@@ -6,6 +6,10 @@ from inventory.models.quantity import Quantity
 
 class QuantityTable(tables.Table):
 
+	buttons = {
+		'add':'InventoryQuantityAdd',
+	}
+
 	class Meta:
 
 		template = 'templates/table.html'
