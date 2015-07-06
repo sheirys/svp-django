@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}" />
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	</head>
+	<body>
+	<div class="container">
+	
+	{% block main_menu %}
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#menu-inventory" data-toggle="tab">Inventory</a></li>
+		<li><a href="#menu-warehouses" data-toggle="tab">Warehouse</a></li>
+		<li><a href="#">Operations</a></li>
+	</ul>
+
+	<div class="nav-sub">
+		<div class="tab-content">
+			<div class="tab-pane active" id="menu-inventory">
+				<a href="{% url 'InventoryProducts' %}" class="btn btn-md btn-primary">Products</a>
+				<a href="{% url 'InventoryQuantities' %}" class="btn btn-md btn-primary">Quantities</a>
+			</div>
+			<div class="tab-pane" id="menu-warehouses">
+				<a class="btn btn-md btn-primary">Warehouses</a>
+			</div>
+		</div>
+	</div>
+	{% endblock main_menu %}
+
+	{% block content %}
+	{% endblock content %}
+	</div>
+	</body>
+</html>

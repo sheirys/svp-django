@@ -1,3 +1,5 @@
+dev/*
+
 *.py[co]
 *.sqlite3
 *.tmp
