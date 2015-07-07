@@ -8,11 +8,12 @@ from inventory.models.product import Product
 class ProductTable(tables.Table):
 
 	buttons = {
-		'add': 'ProductFormView',
-		'export': 'ProductFormView',
+		'add': 'ProductFormCreateView',
+		'export': 'ProductFormCreateView',
 	}
 
-	model = tables.LinkColumn('ProductFormView', args=[A('pk')])
+	id = tables.TemplateColumn('<input type="checkbox" value="{{ record.pk }}" /> {{ record.pk }}', verbose_name="ID")
+	model = tables.LinkColumn('ProductFormUpdateView', args=[A('pk')])
 
 	class Meta:
 

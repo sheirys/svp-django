@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
 from django.views.generic import DetailView
 from django.views.generic.edit import FormView
+from django.views.generic.edit import UpdateView
+from django.views.generic.edit import CreateView
 
 from inventory.models.product import Product
 from inventory.forms.product import ProductForm
@@ -19,12 +21,14 @@ class ProductDetailView(DetailView):
 	model = Product
 	template_name = 'inventory/detail.html'
 
-class ProductFormView(FormView):
+class ProductFormCreateView(CreateView):
+	model = Product
+	template_name = 'inventory/form.html'
+	form_class = ProductForm
+
+class ProductFormUpdateView(UpdateView):
+	model = Product
 	template_name = 'inventory/form.html'
 	form_class = ProductForm
 	success_url = '#'
-
-	def form_valid(self, form):
-		form.save()
-		return super(ProductFormView, self).form_valid(form)
 
