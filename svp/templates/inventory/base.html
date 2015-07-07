@@ -15,6 +15,8 @@
 		<li class="active"><a href="#menu-inventory" data-toggle="tab">Inventory</a></li>
 		<li><a href="#menu-warehouses" data-toggle="tab">Warehouse</a></li>
 		<li><a href="#">Operations</a></li>
+		<li><a href="#menu-plan" data-toggle="tab">Plan</a></li>
+		<li><a href="#">Users</a></li>
 	</ul>
 
 	<div class="nav-sub">
@@ -26,9 +28,17 @@
 			<div class="tab-pane" id="menu-warehouses">
 				<a class="btn btn-md btn-primary">Warehouses</a>
 			</div>
+			<div class="tab-pane" id="menu-plan">
+				<a href="{% url 'ProjectListView' %}" class="btn btn-md btn-primary">Projects</a>
+				<a href="{% url 'TaskListView' %}" class="btn btn-md btn-primary">Tasks</a>
+			</div>
 		</div>
 	</div>
 	{% endblock main_menu %}
+
+	{% if messages %}
+	{{ messages }}
+	{% endif %}
 
 	{% block content %}
 	{% endblock content %}

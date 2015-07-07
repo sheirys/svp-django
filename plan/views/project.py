@@ -9,16 +9,16 @@ from django.views.generic.edit import FormView
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import CreateView
 
-from inventory.models.product import Product
-from inventory.forms.product import ProductForm
-from inventory.tables.product import ProductTable
+from plan.models.project import Project
+from plan.tables.project import ProjectTable
 
 #@login_required
-class ProductListView(SingleTableView, ListView):
-	model = Product
+class ProjectListView(SingleTableView, ListView):
+	model = Project
 	template_name = 'inventory/table.html'
-	table_class = ProductTable
+	table_class = ProjectTable
 
+"""
 class ProductDetailView(DetailView):
 	model = Product
 	template_name = 'inventory/detail.html'
@@ -34,4 +34,4 @@ class ProductFormUpdateView(UpdateView):
 	template_name = 'inventory/form.html'
 	form_class = ProductForm
 	success_url = reverse_lazy('ProductListView')
-			
+"""			

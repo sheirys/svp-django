@@ -9,5 +9,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 	url(r'^auth/', include('django.contrib.auth.urls')),
 	url(r'^inventory/', include('inventory.urls')),
+	url(r'^plan/', include('plan.urls')),
 )
 

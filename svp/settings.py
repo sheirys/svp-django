@@ -39,6 +39,7 @@ INSTALLED_APPS = (
 	'django_tables2',
 	'bootstrap3',
 	'inventory',
+	'plan',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -47,13 +48,14 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	'django.contrib.messages.middleware.MessageMiddleware',
+	'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
 	'django.core.context_processors.request',
 	'django.contrib.auth.context_processors.auth',
+	'django.contrib.messages.context_processors.messages',
 )
 
 ROOT_URLCONF = 'svp.urls'

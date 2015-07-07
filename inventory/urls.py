@@ -5,7 +5,8 @@ from inventory.views.product import ProductFormUpdateView
 from inventory.views.product import ProductFormCreateView
 from inventory.views.product import ProductDetailView
 from inventory.views.quantity import QuantityListView
-from inventory.views.quantity import QuantityFormView
+from inventory.views.quantity import QuantityFormUpdateView
+from inventory.views.quantity import QuantityFormCreateView
 
 urlpatterns = [
 	url(r'^product/$', ProductListView.as_view(), name='ProductListView'), 
@@ -13,5 +14,6 @@ urlpatterns = [
 	url(r'^product/(?P<pk>\d+)/edit/$', ProductFormUpdateView.as_view(), name='ProductFormUpdateView'),
 	url(r'^product/add/', ProductFormCreateView.as_view(), name='ProductFormCreateView'),
 	url(r'^quantity/$', QuantityListView.as_view(), name='QuantityListView'), 
-	url(r'^quantity/edit', QuantityFormView.as_view(), name='QuantityFormView'), 
+	url(r'^quantity/(?P<pk>\d+)/edit/$', QuantityFormUpdateView.as_view(), name='QuantityFormUpdateView'),
+	url(r'^quantity/add/', QuantityFormCreateView.as_view(), name='QuantityFormCreateView'),
 ]

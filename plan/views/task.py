@@ -9,29 +9,24 @@ from django.views.generic.edit import FormView
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import CreateView
 
-from inventory.models.product import Product
-from inventory.forms.product import ProductForm
-from inventory.tables.product import ProductTable
+from plan.models.task import Task
+from plan.tables.task import TaskTable
+from plan.forms.task import TaskForm
 
 #@login_required
-class ProductListView(SingleTableView, ListView):
-	model = Product
+class TaskListView(SingleTableView, ListView):
+	model = Task
 	template_name = 'inventory/table.html'
-	table_class = ProductTable
+	table_class = TaskTable
 
-class ProductDetailView(DetailView):
-	model = Product
-	template_name = 'inventory/detail.html'
-
-class ProductFormCreateView(CreateView):
-	model = Product
+class TaskFormCreateView(CreateView):
+	model = Task
 	template_name = 'inventory/form.html'
-	form_class = ProductForm
-	success_url = reverse_lazy('ProductListView')
+	form_class = TaskForm
+	success_url = reverse_lazy('TaskListView')
 
-class ProductFormUpdateView(UpdateView):
-	model = Product
+class TaskFormUpdateView(UpdateView):
+	model = Task
 	template_name = 'inventory/form.html'
-	form_class = ProductForm
-	success_url = reverse_lazy('ProductListView')
-			
+	form_class = TaskForm
+	success_url = reverse_lazy('TaskListView')

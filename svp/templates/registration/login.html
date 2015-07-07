@@ -9,7 +9,7 @@
 			{{ form.as_table }}
 		<tr>
 			<td colspan="2">
-			<input type="submit" value="Login" />
+			<input type="submit" class="btn btn-primary" value="Login" />
 			<a href="{% url 'django.contrib.auth.views.password_reset' %}">Forgot password?</a>
 			<input type="hidden" name="next" value="{{ next }}" />
 			</td>
