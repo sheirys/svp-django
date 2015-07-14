@@ -8,6 +8,7 @@ from plan.models.project import Project
 class ProjectTable(tables.Table):
 
 	buttons = {
+		'add': 'ProjectFormCreateView',
 	}
 
 	class Meta:

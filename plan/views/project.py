@@ -11,6 +11,7 @@ from django.views.generic.edit import CreateView
 
 from plan.models.project import Project
 from plan.tables.project import ProjectTable
+from plan.forms.project import ProjectForm
 
 #@login_required
 class ProjectListView(SingleTableView, ListView):
@@ -18,20 +19,14 @@ class ProjectListView(SingleTableView, ListView):
 	template_name = 'inventory/table.html'
 	table_class = ProjectTable
 
-"""
-class ProductDetailView(DetailView):
-	model = Product
-	template_name = 'inventory/detail.html'
-
-class ProductFormCreateView(CreateView):
-	model = Product
+class ProjectFormCreateView(CreateView):
+	model = Project
 	template_name = 'inventory/form.html'
-	form_class = ProductForm
-	success_url = reverse_lazy('ProductListView')
+	form_class = ProjectForm
+	success_url = reverse_lazy('ProjectListView')
 
-class ProductFormUpdateView(UpdateView):
-	model = Product
+class ProjectFormUpdateView(UpdateView):
+	model = Project
 	template_name = 'inventory/form.html'
-	form_class = ProductForm
-	success_url = reverse_lazy('ProductListView')
-"""			
+	form_class = ProjectForm
+	success_url = reverse_lazy('ProjectListView')
