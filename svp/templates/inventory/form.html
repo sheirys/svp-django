@@ -3,15 +3,46 @@
 {% block content %}
 	<div class="nav-sub">
 	<form action="" method="post">{% csrf_token %}
+		<div class="row padd">
+			<div class="col-lg-12">
+				<input class="btn btn-success" type="submit"/>
+				<a class="btn btn-default" href="javascript:history.back()">Back</a>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-lg-12">
 				<table class="table table-bordered">
 					{{ form.as_table }}
 				</table>
-				<input class="btn btn-success" type="submit"/>
-				<a class="btn btn-default" href="javascript:history.back()">Back</a>
 			</div>
 		</div>
+		{% if formset %}
+		{{ formset.management_form }}
+		<div class="row">
+			<div class="col-lg-12">
+				<table class="table table-bordered">
+					{% for form in formset.forms %}
+					{% if forloop.first %}
+					<thead>
+						{% for field in form.visible_fields %}
+						<th>{{ field.label_tag }}</th>
+						{% endfor %}
+					</thead>
+					</tbody>
+					{% endif %}
+					
+					<tr>
+					{% for field in form.visible_fields %}
+						<td>{{ field }}</td>
+					{% endfor %}
+					</tr>
+					
+					{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		{% endif %}
 	</form>
 	</div>
 {% endblock content %}

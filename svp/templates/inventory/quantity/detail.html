@@ -1,0 +1,47 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+	<div class="nav-sub">
+		<div class="row">
+			<div class="col-lg-12">
+				<h5>Quantity change {{ object.code }}</h5>
+				<div class="row">
+					<div class="col-lg-6">
+						<table class="table table-bordered">
+							<tr>
+								<td>Code:</td>
+								<td>{{ object.code }}</td>
+							</td>
+							<tr>
+								<td>Model:</td>
+								<td>{{ object.model }}</td>
+							</td>
+							<tr>
+								<td>Warehouse:</td>
+								<td>{{ object.warehouse }}</td>
+							</td>
+						</table>
+					</div>
+					<div class="col-lg-6">
+						<table class="table table-bordered">
+							<tr>
+								<td>Quantity:</td>
+								<td>{{ object.quantity }}</td>
+							</td>
+							<tr>
+								<td>Closed:</td>
+								<td>{{ object.closed }}</td>
+							</td>
+							<tr>
+								<td>Date:</td>
+								<td>{{ object.date_added }}</td>
+							</td>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+		</div>
+	</div>
+{% endblock content %}
